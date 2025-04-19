@@ -7,6 +7,7 @@ public class Task {
     String task_name;
     Priority task_priority;
     Type task_type;
+    boolean check;
 
     public Task(String task_name, Priority task_priority, Type type) {
         this.task_name = task_name;
@@ -24,5 +25,13 @@ public class Task {
 
     public Type getType() {
         return task_type;
+    }
+
+    public boolean isCheck() {
+        return check;
+    }
+
+    public void setCheck(boolean check) {
+        this.check = check;
     }
 }

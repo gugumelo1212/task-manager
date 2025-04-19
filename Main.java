@@ -14,12 +14,18 @@ public class Main {
                     Task_Manager.addNewTask();
                     break;
                 case 1:
-                    Task_Manager.removerTask();
+                    Task_Manager.removeTask();
                     break;
                 case 2:
                     Task_Manager.showTasks();
                     break;
                 case 3:
+                    Task_Manager.checkTask();
+                    break;
+                case 4:
+                    Task_Manager.uncheckTask();
+                    break;
+                case 5:
                     System_Manager.setSystem_open(false);
                     break;
                 default:

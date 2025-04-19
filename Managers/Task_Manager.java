@@ -28,7 +28,7 @@ public class Task_Manager {
         tasks_list.add(new Task(task_name, Priority.valueOf(task_priority), Type.valueOf(task_type)));
     }
 
-    public static void removerTask(){
+    public static void removeTask(){
         Interface_Manager.showHeader("Remove task");
 
         System.out.println("Task name:");
@@ -53,7 +53,49 @@ public class Task_Manager {
         Interface_Manager.showHeader("Show tasks");
 
         for(Task task : tasks_list){
-            System.out.println(task.getTask_name());
+            System.out.println(task.getTask_name() + " | " + task.getTask_priority() + " | " + task.getType() + " [" + (task.isCheck() ? "✅" : "❌") + "]");
         }
+    }
+
+    public static void checkTask(){
+        Interface_Manager.showHeader("Check task");
+
+        System.out.println("Task name:");
+        String task_name = System_Manager.getScan().nextLine();
+
+        Task task_object = null;
+
+        for(Task task : tasks_list){
+            if(task.getTask_name().equals(task_name)){
+                task_object = task;
+            }
+        }
+        if(task_object == null){
+            System.out.println("Invalid task.");
+            return;
+        }
+
+        task_object.setCheck(true);
+    }
+
+    public static void uncheckTask(){
+        Interface_Manager.showHeader("Uncheck task");
+
+        System.out.println("Task name:");
+        String task_name = System_Manager.getScan().nextLine();
+
+        Task task_object = null;
+
+        for(Task task : tasks_list){
+            if(task.getTask_name().equals(task_name)){
+                task_object = task;
+            }
+        }
+        if(task_object == null){
+            System.out.println("Invalid task.");
+            return;
+        }
+
+        task_object.setCheck(false);
     }
 }

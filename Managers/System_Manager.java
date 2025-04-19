@@ -6,7 +6,7 @@ public class System_Manager {
     private static Scanner scan = new Scanner(System.in);
 
     private static boolean system_open = true;
-    private static String[] menu_options_list = {"Add new task", "Remove task", "Show task", "Exit system"};
+    private static String[] menu_options_list = {"Add new task", "Remove task", "Show task", "Check task", "Uncheck task", "Exit system"};
 
     public static boolean isSystem_open() {
         return system_open;
